@@ -87,8 +87,17 @@ $paycfa->setItems([
 ###### Setting TVA Amount
 TVA (optional)
 ```php
-$paycfa->setTvaAmount(100);
+payfa->setTva([["name" => "VAT (18%)", "amount" => 1000],["name" => " other VAT", "amount" => 500]]);
 ```
+
+
+###### Adding Custom Data
+(optional)
+```php
+$paycfa->setCustomData([['CartID',"32393"],['PERIOD',"TABASKI"]]);
+```
+
+
 
 ###### Setting Total Amount 
 Order total (required)

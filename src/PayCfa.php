@@ -37,7 +37,7 @@ class PayCfa
     private $cancelUrl;
     private $returnUrl;
     private $generateUrl;
-    private $tvaAmount;
+    private $tva;
     private $description;
     private $nameStore;
     private $postalAdressStore;
@@ -48,12 +48,12 @@ class PayCfa
     private $keys;
     private $currency;
     private $template;
+    private $customData;
 
     private $BASE_URL = "http://192.168.8.100:4200/api/v1/";
     private $BASE_URLSANBOX = "http://192.168.8.100:4200/api/v1/";
     private $verify_URL = "/transactions/confirm/";
     private $setPayout_URL = "payments/request";
-    private $refund_URL = "getvalue";
 
 
     /**
@@ -80,7 +80,7 @@ class PayCfa
         $this->cancelUrl = null;
         $this->returnUrl = null;
         $this->generateUrl = null;
-        $this->tvaAmount = 0;
+        $this->tva = [];
         $this->description = null;
         $this->nameStore = null;
         $this->phoneStore = null;
@@ -187,9 +187,10 @@ class PayCfa
                 "keys" => $this->keys,
                 "currency" => $this->getCurrency(),
                 "items" => $this->getItems(),
-                "taxes" => ["name" => "tva", "amount" => $this->tvaAmount],
+                "taxes" => $this->getTva(),
                 "amount" => $this->getAmount(),
-                "description" => $this->getDescription()
+                "description" => $this->getDescription(),
+                "custom_datas"=>$this->getCustomData()
             ];
             $actions = [
                 "cancel_url" => $this->getCancelUrl(),
@@ -251,21 +252,7 @@ class PayCfa
 
 
 
-    /**
-     * @return int
-     */
-    public function getTvaAmount()
-    {
-        return $this->tvaAmount;
-    }
 
-    /**
-     * @param int $tvaAmount
-     */
-    public function setTvaAmount($tvaAmount)
-    {
-        $this->tvaAmount = $tvaAmount;
-    }
 
     /**
      * @return null
@@ -587,6 +574,47 @@ class PayCfa
     {
         $this->template = $template;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCustomData()
+    {
+        return $this->customData;
+    }
+
+    /**
+     * @param mixed $customData
+     */
+    public function setCustomData($customData)
+    {
+        $this->customData = $customData;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTva()
+    {
+        return $this->tva;
+    }
+
+    /**
+     * @param array $tva
+     */
+    public function setTva($tva)
+    {
+        $this->tva = $tva;
+    }
+
+    /**
+     * @return int
+     */
+
+
+
+
+
 
 
 
