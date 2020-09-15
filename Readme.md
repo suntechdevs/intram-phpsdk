@@ -9,7 +9,7 @@ Built on the INTRAM HTTP API (beta).
 ## Installation via composer
 
 ```sh
-composer require suntechintram/paycfa
+composer require intram/php-sdk
 ```
 
 ## API configuration
@@ -17,7 +17,7 @@ composer require suntechintram/paycfa
 Setup intram API keys.
 
 ```php
-$paycfa = new PayCfa(
+$paycfa = new \intram\PayCfa\PayCfa(
             "5b06f06a0aad7d0163c414926b635ee9cdf41438de0f09d70a4acf153083b7ed375a691e3513b42544530469e1ff8657b34508dc61927048444dd6dc9ccbb87f",
             "pk_9c0410014969f276e8b3685fec7b1b2ab41fc760db2976c75e32ec0fdc3b7d5575a7087f9aeb4d8a29a949ac4cac11363b39ff6a6d9dc3bc6ce0f328c62c3c58",
             "sk_08bd75f9468b484d8a9f24daddff4638d6513fdcf3ff4dd533e72ce55c22eac3207c12af49400ecddb1969ad3db152b0c338c0050c4540f9d0cb8c3cd3cb8c26",
