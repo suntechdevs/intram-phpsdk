@@ -27,21 +27,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PayCfa.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PayCfa.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PayCfa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="10566">
+              <caret line="592" column="1" selection-start-line="592" selection-start-column="1" selection-end-line="592" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Readme.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="342">
-                <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+              <first_editor relative-caret-position="1594">
+                <caret line="233" column="14" lean-forward="true" selection-start-line="233" selection-start-column="14" selection-end-line="233" selection-end-column="14" />
               </first_editor>
               <second_editor />
             </state>
@@ -55,6 +55,7 @@
       <find>cur</find>
       <find>curr</find>
       <find>&quot;error&quot;</find>
+      <find>$currency</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -66,8 +67,8 @@
         <option value="$PROJECT_DIR$/src/Contantes.php" />
         <option value="$PROJECT_DIR$/src/Constant.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/PayCfa.php" />
         <option value="$PROJECT_DIR$/Readme.md" />
+        <option value="$PROJECT_DIR$/src/PayCfa.php" />
       </list>
     </option>
   </component>
@@ -184,12 +185,12 @@
       <workItem from="1596819226683" duration="2770000" />
       <workItem from="1597048536463" duration="67000" />
       <workItem from="1600097007382" duration="5010000" />
-      <workItem from="1600160507965" duration="10307000" />
+      <workItem from="1600160507965" duration="13606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42262000" />
+    <option name="totallyTimeSpent" value="45561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="685" extended-state="6" />
@@ -204,7 +205,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32844037" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -372,13 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PayCfa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -389,10 +383,17 @@
     <entry file="file://$PROJECT_DIR$/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="342">
-            <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <first_editor relative-caret-position="1594">
+            <caret line="233" column="14" lean-forward="true" selection-start-line="233" selection-start-column="14" selection-end-line="233" selection-end-column="14" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PayCfa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10566">
+          <caret line="592" column="1" selection-start-line="592" selection-start-column="1" selection-end-line="592" selection-end-column="1" />
         </state>
       </provider>
     </entry>

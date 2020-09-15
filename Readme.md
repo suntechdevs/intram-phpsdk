@@ -108,6 +108,13 @@ $paycfa->setDescription("Pretty and suitable for your waterfall");
 ```
 
 
+###### Setting Template 
+ (required)
+```php
+$paycfa->setTemplate("default");
+```
+
+
 ###### Setting Store Redirection Url
 
 ```php
@@ -163,6 +170,84 @@ Give the transaction identifier as an argument to the function (required)
 ```php
 $paycfa->getTransactionStatus(5f2d7a96b97d9d3fea912c11); 
 ```
+
+###### Expected response
+
+```php
+{
+  +"error": false
+  +"status": "PENDING"
+  +"transaction": {
+    +"_status": "PENDING"
+    +"_channels": []
+    +"_created_at": "2020-09-15T14:56:10.316Z"
+    +"_id": "5f60d7a0573bc71854bf095e"
+    +"_type": "DEBIT"
+    +"marchand": {
+      +"_statut": true
+      +"_state_id": "5f31a47a38111e135ae7b7f3"
+      +"_valide": true
+      +"_settingtransaction": array:2 [▼
+        0 => "5f2fbca2c5e9d61f980574ff"
+        1 => "5f31aab338111e135ae7b7fb"
+      ]
+      +"_env": "sandbox"
+      +"_created_at": "2020-07-23T10:01:42.667Z"
+      +"_id": "5f19604cd7e0114103d4ced3"
+      +"_user_id": "5f195d842860e81da7d82f3a"
+      +"__v": 0
+      +"_base_url_site_web": "www.afarath.com"
+      +"_company": "AraTech"
+      +"_email": "fath@aratech.com"
+      +"_web_site": "www.afarath.com"
+      +"_template": array:2 [
+        0 => "5f3577573ac8c46963470639"
+        1 => "5f35773e3ac8c46963470637"
+      ]
+    }
+    +"_store": {
+      +"name": "Sodjinnin Store"
+      +"postal_adress": "BP 35"
+      +"logo_url": "https://www.google.com/webhp?hl=fr&sa=X&ved=0ahUKEwi7kZ3Qpt_qAhWxC2MBHVFZDDgQPAgH"
+      +"web_site_url": "https://www.random.org/"
+      +"phone": "94784784"
+      +"template": "default"
+    }
+    +"_reference": "SaCsEhzMFc"
+    +"_amount": 1000
+    +"_country_code": "BJ"
+    +"_qrcode": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAAL9SURBVO3BQQ7jCAhFwZcvi6NyKI7KgkyWrCxZdtLdDFWv9wdrDLFGEWsUsUYRaxSxRhFrFL ▶"
+    +"__v": 0
+    +"invoice": {
+      +"custom_datas": []
+      +"_created_at": "2020-09-15T14:56:10.335Z"
+      +"_id": "5f60d7a0573bc71854bf095f"
+      +"currency": "XOF"
+      +"items": array:1 [
+        0 => {
+          +"_id": "5f60d7a0573bc71854bf0960"
+          +"name": "short"
+          +"price": 500
+        }
+      ]
+      +"taxes": array:1 [
+        0 => {
+          +"_id": "5f60d7a0573bc71854bf0961"
+          +"name": "tva"
+          +"amount": 100
+        }
+      ]
+      +"amount": 1000
+      +"description": "At vero eos et accusam et justo duo dolores"
+      +"transaction": "5f60d7a0573bc71854bf095e"
+      +"__v": 0
+    }
+  }
+  +"message": "statut de la transaction"
+}
+```
+
+
 
 # Running Tests
 To run tests just setup the API configuration environment variables. An internet connection is required for some of the tests to pass.

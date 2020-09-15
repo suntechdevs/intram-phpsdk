@@ -49,8 +49,8 @@ class PayCfa
     private $currency;
     private $template;
 
-    private $BASE_URL = "http://192.168.8.112:4200/api/v1/";
-    private $BASE_URLSANBOX = "http://192.168.8.112:4200/api/v1/";
+    private $BASE_URL = "http://192.168.8.100:4200/api/v1/";
+    private $BASE_URLSANBOX = "http://192.168.8.100:4200/api/v1/";
     private $verify_URL = "/transactions/confirm/";
     private $setPayout_URL = "payments/request";
     private $refund_URL = "getvalue";
@@ -63,7 +63,7 @@ class PayCfa
      * @param $secret
      * @param $sandbox
      */
-    public function __construct($public_key, $private_key, $secret, $marchand_id, $sandbox)
+    public function __construct($public_key, $private_key, $secret, $marchand_id, $sandbox=false)
     {
         $this->public_key = $public_key;
         $this->private_key = $private_key;
@@ -109,6 +109,22 @@ class PayCfa
 
         $reponse = null;
 
+        if (
+            !isset($transactionId) ||
+            !isset($this->private_key) ||
+            !isset($this->public_key) ||
+            !isset($this->secret)
+        )
+        {
+            $response = json_encode(array(
+                "error" => true,
+                "message"=>"Rassurez vous de passer les arguments 
+                suivants : 'transactionId','public_key',
+                'private_key','secret'"));;
+            return $response;
+        }
+
+
         try {
 
             $curl = curl_init();
@@ -142,6 +158,25 @@ class PayCfa
     public function setRequestPayment()
     {
         $reponse = null;
+
+
+        if (
+            !isset($this->currency) ||
+            !isset($this->items) ||
+            !isset($this->amount) ||
+            !isset($this->nameStore) ||
+            !isset($this->template) ||
+            !isset($this->private_key) ||
+            !isset($this->public_key) ||
+            !isset($this->secret)
+        )
+        {
+            $response = json_encode(array(
+                "error" => true,
+                "message"=>"Rassurez vous de passer les arguments suivants : 'currency','items','amount','nameStore', 'template','public_key', 'private_key','secret'"));;
+            return $response;
+        }
+
 
         try {
 
