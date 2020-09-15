@@ -7,7 +7,7 @@
  */
 
 
-namespace suntechintram\PayCfa;
+namespace intram\PayCfa;
 
 class PayCfa
 {
