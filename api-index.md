@@ -7,7 +7,7 @@ After having followed the steps found in the section [introduction](https://deve
 * [x] PHP
 * [x] WORDPRESS
 * [x] JAVA
-* [x] [NODEJS](nodejs-api-client.md)
+* [x] [NODEJS](backend/nodejs-api-client.md)
 * [x] PRESTASHOP
 * [x] ANDROID
 * [x] HTTP/JSON
