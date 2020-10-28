@@ -1,4 +1,17 @@
+---
+description: PHP SDK for server side integration
+---
+
 # PHP SERVER SDK
+
+## GENERATE YOUR API KEYS
+
+API keys are your digital references towards Intram systems. We use them to identify your account and the applications you will create. These keys are necessary for any integration of the APIs of Intram's payments APIs. Here are the steps to follow:
+
+* First you need to have an Intram Business account activated. [Create ](https://account.intram.cf/register)one if it is not yet the case.
+* [Login](https://account.intram.cf/login) to your account and click on  Developers at the menu level on the left.
+* Then click on API, you will see all yours API keys.
+* You can switch to `SANDBOX MODE,` or`ENABLE LIVE MODE`.
 
 ### Installation via composer
 
@@ -8,7 +21,7 @@ composer require intram/php-sdk
 
 ### API configuration
 
-Setup intram API keys.
+[Login](https://account.intram.cf/login) to your Intram account, click on Developer, then on API at this level, get the API keys and give them as arguments to the controller. Initialize Intram PayCfa by entering in order: `PUBLIC_KEY`,`PRIVATE_KEY`, `INTRAM_SECRET`,`INTRAM_MARCHAND_KEY`, `MODE` The mode: `true` for live mode and `false` for test mode.
 
 ```php
 $paycfa = new \intram\PayCfa\PayCfa(
@@ -18,8 +31,6 @@ $paycfa = new \intram\PayCfa\PayCfa(
             "marchand_id",
             true)
 ```
-
-Log in to your Intram account, click on Developer, then on API at this level, get the API keys and give them as arguments to the controller. Initialize Intram PayCfa by entering in order: `PUBLIC_KEY`,`PRIVATE_KEY`, `INTRAM_SECRET`,`INTRAM_MARCHAND_KEY`, `MODE` The mode: `true` for live mode and `false` for test mode.
 
 ### Configure your department / company information
 
