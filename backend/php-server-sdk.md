@@ -1,10 +1,4 @@
-# index
-
-## INTRAM PHP SDK
-
-The [PHP](https://www.php.net) library for [INTRAM \(intram.com\)](https://intram.com).
-
-Built on the INTRAM HTTP API \(beta\).
+# PHP SERVER SDK
 
 ### Installation via composer
 
