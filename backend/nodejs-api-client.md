@@ -1,6 +1,6 @@
 ---
 description: >-
-  The Node.JS library for INTRAM (intram.com). Built on the INTRAM HTTP API
+  The Node.JS library for INTRAM (intram.org). Built on the INTRAM HTTP API
   (beta).
 ---
 
@@ -10,8 +10,8 @@ description: >-
 
 API keys are your digital references towards Intram systems. We use them to identify your account and the applications you will create. These keys are necessary for any integration of the APIs of Intram's payments APIs. Here are the steps to follow:
 
-* First you need to have an Intram Business account activated. [Create ](https://account.intram.cf/register)one if it is not yet the case.
-* [Login](https://account.intram.cf/login) to your account and click on  Developers at the menu level on the left.
+* First you need to have an Intram Business account activated. [Create ](https://account.intram.org/register)one if it is not yet the case.
+* Logi[https://account.intram.org/login](https://account.intram.org/login)n to your account and click on  Developers at the menu level on the left.
 * Then click on API, you will see all yours API keys.
 * You can switch to `SANDBOX MODE,` or`ENABLE LIVE MODE`.
 
@@ -20,12 +20,12 @@ API keys are your digital references towards Intram systems. We use them to iden
 ### INTRAM INSTALLATION VIA THE COMMAND NPM
 
 ```
-npm install --save intram-nodejs
+npm install @intram-apk/nodejs@1.0.2
 ```
 
 ## BASIC CONFIGURATION
 
-[Login](https://account.intram.cf/login) to your account then click on Developers and click on [API](https://account.intram.cf/api) at the menu level left. The APIs key of your merchant account are directly available depending on the mode\('sandbox' or 'live'\) chosen. Retrieve the API keys and give them as arguments to the following methods
+[Login](https://account.intram.org/login) to your account then click on Developers and click on [API](https://account.intram.org/api) at the menu level left. The APIs key of your merchant account are directly available depending on the mode\('sandbox' or 'live'\) chosen. Retrieve the API keys and give them as arguments to the following methods
 
 {% code title="Setup" %}
 ```javascript
@@ -445,7 +445,7 @@ invoice.confirm(token)
   console.log(invoice.customer); // {name: 'Alioune', phone: '773830274', email: 'aliounebadara@gmail.com'}
 
   // URL of the electronic PDF receipt for download
-  console.log(invoice.receiptURL); // 'https://app.intram.com/sandbox-checkout/receipt/pdf/test_VPGPZNnHOC.pdf'
+  console.log(invoice.receiptURL); // 'https://app.intram.org/sandbox-checkout/receipt/pdf/test_VPGPZNnHOC.pdf'
 })
 .catch(function (e) {
   console.log(e);
