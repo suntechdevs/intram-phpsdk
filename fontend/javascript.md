@@ -10,7 +10,7 @@ description: >-
 Le SDK Javascript ne permet pas le traitement des données de facturation. Vous devez utilisé un SDK BACKEND pour générer un lien de facturation qui vous servira ensuite après une requête HTTP.
 {% endhint %}
 
-Toute utilisation du SDK JAVASCRIPT requiert un compte marchand valide et un lien de facturation. Si vous n'en disposez pas encore [créez-en un](https://account.intram.cf) dès maintenant. L'intégration du SDK JAVASCRIPT se fait en important le script qui suit avant la fermeture de la balise fermante`</body>` 
+Toute utilisation du SDK JAVASCRIPT requiert un compte marchand valide et un lien de facturation. Si vous n'en disposez pas encore [créez-en un](https://account.intram.org/register) dès maintenant. L'intégration du SDK JAVASCRIPT se fait en important le script qui suit avant la fermeture de la balise fermante`</body>` 
 
 ```markup
 <script src="https://cdn.intram.cf/sdk-javascript.js"></script>
