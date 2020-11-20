@@ -50,8 +50,8 @@ class PayCfa
     private $template;
     private $customData;
 
-    private $BASE_URL = "http://192.168.8.100:4200/api/v1/";
-    private $BASE_URLSANBOX = "http://192.168.8.100:4200/api/v1/";
+    private $BASE_URL = "https://webservices.intram.org:4002/api/v1/";
+    private $BASE_URLSANBOX = "https://webservices.intram.org:4002/api/v1/";
     private $verify_URL = "/transactions/confirm/";
     private $setPayout_URL = "payments/request";
 
@@ -118,7 +118,7 @@ class PayCfa
         {
             $response = json_encode(array(
                 "error" => true,
-                "message"=>"Rassurez vous de passer les arguments 
+                "message"=>"Rassurez vous de passer les arguments
                 suivants : 'transactionId','public_key',
                 'private_key','secret'"));;
             return $response;
