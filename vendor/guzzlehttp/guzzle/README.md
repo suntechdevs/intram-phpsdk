@@ -1,25 +1,32 @@
-![Guzzle](.github/logo.png?raw=true)
+# README
 
-# Guzzle, PHP HTTP client
+![Guzzle](https://github.com/suntechdevs/intram-phpsdk/tree/7b9474f6795fbe318a673a1f054d3243bcba03e4/vendor/guzzlehttp/guzzle/.github/logo.png?raw=true)
 
-[![Latest Version](https://img.shields.io/github/release/guzzle/guzzle.svg?style=flat-square)](https://github.com/guzzle/guzzle/releases)
-[![Build Status](https://img.shields.io/github/workflow/status/guzzle/guzzle/CI?label=ci%20build&style=flat-square)](https://github.com/guzzle/guzzle/actions?query=workflow%3ACI)
-[![Total Downloads](https://img.shields.io/packagist/dt/guzzlehttp/guzzle.svg?style=flat-square)](https://packagist.org/packages/guzzlehttp/guzzle)
+## Guzzle, PHP HTTP client
 
-Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and
-trivial to integrate with web services.
+[![Latest Version](https://img.shields.io/github/release/guzzle/guzzle.svg?style=flat-square)](https://github.com/guzzle/guzzle/releases) [![Build Status](https://img.shields.io/github/workflow/status/guzzle/guzzle/CI?label=ci%20build&style=flat-square)](https://github.com/guzzle/guzzle/actions?query=workflow%3ACI) [![Total Downloads](https://img.shields.io/packagist/dt/guzzlehttp/guzzle.svg?style=flat-square)](https://packagist.org/packages/guzzlehttp/guzzle)
 
-- Simple interface for building query strings, POST requests, streaming large
+Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and trivial to integrate with web services.
+
+* Simple interface for building query strings, POST requests, streaming large
+
   uploads, streaming large downloads, using HTTP cookies, uploading JSON data,
+
   etc...
-- Can send both synchronous and asynchronous requests using the same interface.
-- Uses PSR-7 interfaces for requests, responses, and streams. This allows you
+
+* Can send both synchronous and asynchronous requests using the same interface.
+* Uses PSR-7 interfaces for requests, responses, and streams. This allows you
+
   to utilize other PSR-7 compatible libraries with Guzzle.
-- Supports PSR-18 allowing interoperability between other PSR-18 HTTP Clients.
-- Abstracts away the underlying HTTP transport, allowing you to write
+
+* Supports PSR-18 allowing interoperability between other PSR-18 HTTP Clients.
+* Abstracts away the underlying HTTP transport, allowing you to write
+
   environment and transport agnostic code; i.e., no hard dependency on cURL,
+
   PHP streams, sockets, or non-blocking event loops.
-- Middleware system allows you to augment and compose client behavior.
+
+* Middleware system allows you to augment and compose client behavior.
 
 ```php
 $client = new \GuzzleHttp\Client();
@@ -38,42 +45,30 @@ $promise = $client->sendAsync($request)->then(function ($response) {
 $promise->wait();
 ```
 
-## Help and docs
+### Help and docs
 
 We use GitHub issues only to discuss bugs and new features. For support please refer to:
 
-- [Documentation](http://guzzlephp.org/)
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/guzzle)
-- [#guzzle](https://app.slack.com/client/T0D2S9JCT/CE6UAAKL4) channel on [PHP-HTTP Slack](http://slack.httplug.io/)
-- [Gitter](https://gitter.im/guzzle/guzzle)
+* [Documentation](http://guzzlephp.org/)
+* [Stack Overflow](http://stackoverflow.com/questions/tagged/guzzle)
+* [\#guzzle](https://app.slack.com/client/T0D2S9JCT/CE6UAAKL4) channel on [PHP-HTTP Slack](http://slack.httplug.io/)
+* [Gitter](https://gitter.im/guzzle/guzzle)
 
+### Installing Guzzle
 
-## Installing Guzzle
-
-The recommended way to install Guzzle is through
-[Composer](https://getcomposer.org/).
+The recommended way to install Guzzle is through [Composer](https://getcomposer.org/).
 
 ```bash
 composer require guzzlehttp/guzzle
 ```
 
+### Version Guidance
 
-## Version Guidance
+| Version | Status | Packagist | Namespace | Repo | Docs | PSR-7 | PHP Version |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 3.x | EOL | `guzzle/guzzle` | `Guzzle` | [v3](https://github.com/guzzle/guzzle3) | [v3](http://guzzle3.readthedocs.org) | No | &gt;= 5.3.3 |
+| 4.x | EOL | `guzzlehttp/guzzle` | `GuzzleHttp` | [v4](https://github.com/guzzle/guzzle/tree/4.x) | N/A | No | &gt;= 5.4 |
+| 5.x | EOL | `guzzlehttp/guzzle` | `GuzzleHttp` | [v5](https://github.com/guzzle/guzzle/tree/5.3) | [v5](http://docs.guzzlephp.org/en/5.3/) | No | &gt;= 5.4 |
+| 6.x | Bugfixes | `guzzlehttp/guzzle` | `GuzzleHttp` | [v6](https://github.com/guzzle/guzzle/tree/6.5) | [v6](http://docs.guzzlephp.org/en/6.5/) | Yes | &gt;= 5.5 |
+| 7.x | Latest | `guzzlehttp/guzzle` | `GuzzleHttp` | [v7](https://github.com/guzzle/guzzle) | [v7](http://docs.guzzlephp.org/en/latest/) | Yes | &gt;= 7.2 |
 
-| Version | Status     | Packagist           | Namespace    | Repo                | Docs                | PSR-7 | PHP Version |
-|---------|------------|---------------------|--------------|---------------------|---------------------|-------|-------------|
-| 3.x     | EOL        | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    | >= 5.3.3    |
-| 4.x     | EOL        | `guzzlehttp/guzzle` | `GuzzleHttp` | [v4][guzzle-4-repo] | N/A                 | No    | >= 5.4      |
-| 5.x     | EOL        | `guzzlehttp/guzzle` | `GuzzleHttp` | [v5][guzzle-5-repo] | [v5][guzzle-5-docs] | No    | >= 5.4      |
-| 6.x     | Bugfixes   | `guzzlehttp/guzzle` | `GuzzleHttp` | [v6][guzzle-6-repo] | [v6][guzzle-6-docs] | Yes   | >= 5.5      |
-| 7.x     | Latest     | `guzzlehttp/guzzle` | `GuzzleHttp` | [v7][guzzle-7-repo] | [v7][guzzle-7-docs] | Yes   | >= 7.2      |
-
-[guzzle-3-repo]: https://github.com/guzzle/guzzle3
-[guzzle-4-repo]: https://github.com/guzzle/guzzle/tree/4.x
-[guzzle-5-repo]: https://github.com/guzzle/guzzle/tree/5.3
-[guzzle-6-repo]: https://github.com/guzzle/guzzle/tree/6.5
-[guzzle-7-repo]: https://github.com/guzzle/guzzle
-[guzzle-3-docs]: http://guzzle3.readthedocs.org
-[guzzle-5-docs]: http://docs.guzzlephp.org/en/5.3/
-[guzzle-6-docs]: http://docs.guzzlephp.org/en/6.5/
-[guzzle-7-docs]: http://docs.guzzlephp.org/en/latest/
