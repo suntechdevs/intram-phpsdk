@@ -20,8 +20,8 @@ Une fois le SDK importé dans votre application web vous pouvez l'utiliser de ce
 
 ```javascript
 intramOpenWidget({
-    billing_link:'https://account.intram.cf/payment/gate/5f6a223d768b1875356440cc',
-    key:'5e59e0c34bb8737cedf4c0ec92d9ae94007e33e5c30280596456990d9fc2f60'
+    billing_link:'https://account.intram.cf/payment/gate/5f6a223d768b1875356440cc', //le lien de paiement
+    key:'5e59e0c34bb8737cedf4c0ec92d9ae94007e33e5c30280596456990d9fc2f60' //votre clé public
 })
 ```
 

@@ -1,7 +1,6 @@
 # Table of contents
 
 * [INTRODUCTION](README.md)
-* [API](api-index.md)
 
 ## HOME
 
@@ -11,20 +10,15 @@
 
 * [Register](account/register.md)
 * [MERCHANT ACCOUNT ACTIVATION](account/account-activation.md)
-* [MONEY TRANSFER](account/money-transfer.md)
 
 ## PAYMENT
 
 * [Supported devices](payment/supported-devices.md)
-* [Payment methods](payment/payment-methods.md)
 * [Fees](payment/fees.md)
-* [Payments](payment/payments.md)
-* [Transactions](payment/transactions.md)
 
-## PAYCFA MOBILE APP
+---
 
-* [TRANSACTIONS](paycfa-mobile-app/transactions.md)
-* [MONEY TRANSFER](paycfa-mobile-app/money-transfer.md)
+* [API](api-index.md)
 
 ## FONTEND
 
