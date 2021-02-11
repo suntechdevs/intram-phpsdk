@@ -17,10 +17,10 @@ Les clés API sont vos références numériques vers les systèmes Intram. Nous 
 
 ## INSTALLATION
 
-### INTRAM INSTALLATION VIA LA COMMAND NPM
+### INSTALLATION INTRAM VIA LA COMMANDE NPM
 
 ```
-npm install @intram-apk/nodejs@1.0.2
+npm i @intram-sdk/nodejs
 ```
 
 ## CONFIGURATION BASIC
