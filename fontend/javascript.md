@@ -13,14 +13,14 @@ Le SDK Javascript ne permet pas le traitement des données de facturation. Vous 
 Toute utilisation du SDK JAVASCRIPT requiert un compte marchand valide et un lien de facturation. Si vous n'en disposez pas encore [créez-en un](https://account.intram.org/register) dès maintenant. L'intégration du SDK JAVASCRIPT se fait en important le script qui suit avant la fermeture de la balise fermante`</body>` 
 
 ```markup
-<script src="https://cdn.intram.cf/sdk-javascript.js"></script>
+<script src="https://cdn.intram.org/sdk-javascript.js"></script>
 ```
 
 Une fois le SDK importé dans votre application web vous pouvez l'utiliser de cette manière : 
 
 ```javascript
 intramOpenWidget({
-    billing_link:'https://account.intram.cf/payment/gate/5f6a223d768b1875356440cc', //le lien de paiement
+    billing_link:'https://account.intram.org/payment/gate/5f6a223d768b1875356440cc', //le lien de paiement
     key:'5e59e0c34bb8737cedf4c0ec92d9ae94007e33e5c30280596456990d9fc2f60' //votre clé public
 })
 ```
