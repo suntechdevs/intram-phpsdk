@@ -1,4 +1,4 @@
-# Register
+# Inscription
 
 ![page d&apos;inscription: https://account.intram.org/register](../.gitbook/assets/screencapture-localhost-4004-register-2021-02-02-16_07_34.png)
 

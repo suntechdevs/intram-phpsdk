@@ -1,4 +1,4 @@
-# Fees
+# Frais
 
 Des frais sont appliqués à chaque moyen de paiement et varie suivant plusieurs facteurs.
 

@@ -1,4 +1,4 @@
-# MERCHANT ACCOUNT ACTIVATION
+# Activation du compte machand
 
 ![Param&#xE8;tre du compte utilisateur](../.gitbook/assets/screencapture-localhost-4004-settings-2021-02-02-16_26_30.png)
 

@@ -1,4 +1,4 @@
-# Supported devices
+# Devises supportées
 
 {% hint style="info" %}
 Cette section sera mise à jour continuellement.

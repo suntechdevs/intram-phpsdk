@@ -2,13 +2,15 @@
 
   **OBLIGATOIRE**
 
-After having followed the steps found in the section [INTRODUCTION](./), you can then integrate the `API CLIENT` of your choice from the list below:
+Après avoir suivi les étapes de la section [INTRODUCTION](./), vous pouvez ensuite intégrer l' `API CLIENT` de votre choix dans la liste ci-dessous:
 
-* [x] PHP
+* [x] [PHP](backend/php-server-sdk.md)
 * [x] WORDPRESS
 * [x] JAVA
 * [x] [NODEJS](backend/nodejs-api-client.md)
 * [x] PRESTASHOP
 * [x] ANDROID
 * [x] HTTP/JSON
+
+
 

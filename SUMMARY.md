@@ -8,13 +8,13 @@
 
 ## ACCOUNT
 
-* [Register](account/register.md)
-* [MERCHANT ACCOUNT ACTIVATION](account/account-activation.md)
+* [Inscription](account/register.md)
+* [Activation du compte machand](account/account-activation.md)
 
 ## PAYMENT
 
-* [Supported devices](payment/supported-devices.md)
-* [Fees](payment/fees.md)
+* [Devises supportées](payment/supported-devices.md)
+* [Frais](payment/fees.md)
 
 ---
 
