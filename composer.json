@@ -1,17 +1,18 @@
 {
   "name": "intram/php-sdk",
-  "description": "Permet aux entreprises et aux particuliers de recevoir des paiements par mobile money, carte de crédit et compte bancaire en toute sécurité.",
+  "description": "Php sdk for intram payment gateway",
   "type": "library",
+  "version": "0.0.1",
   "license": "MIT",
   "authors": [
     {
-      "name": "Suntech Devs",
-      "email": "suntechdevs@gmail.com"
+      "name": "SOFTWARE UNIVERSE TECHNOLOGY",
+      "email": "contact@suntech.bj"
     }
   ],
   "minimum-stability": "stable",
   "autoload": {
-    "psr-4": {"intram\\PayCfa\\": "src/"}
+    "psr-4": {"Intram\\": "src/"}
   },
   "require": {
     "guzzlehttp/guzzle": "^7.0"
