@@ -573,12 +573,4 @@ class Intram
     /**
      * @return int
      */
-
-
-
-
-
-
-
-
 }
