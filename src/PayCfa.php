@@ -9,7 +9,7 @@
 
 namespace intram\PayCfa;
 
-class PayCfa
+class Intram
 {
     // Public Api key
     private $public_key;
@@ -22,14 +22,9 @@ class PayCfa
 
     // Account Marchand
     private $marchand_id;
-
-
     private $sandbox;
-
     private $curl;
-
     private $const;
-
     private $redirectionUrl;
     private $items;
     private $amount;
@@ -57,7 +52,7 @@ class PayCfa
 
 
     /**
-     * PayCfa constructor.
+     * Intram constructor.
      * @param $public_key
      * @param $private_key
      * @param $secret
@@ -72,7 +67,6 @@ class PayCfa
         $this->sandbox = $sandbox ? "sandbox" : "live";
         $this->curl = new \GuzzleHttp\Client();
         $this->marchand_id = $marchand_id;
-
         $this->redirectionUrl = null;
         $this->items = [];
         $this->amount = 0;
@@ -86,7 +80,6 @@ class PayCfa
         $this->phoneStore = null;
         $this->logoUrlStore = null;
         $this->webSiteUrlStore = null;
-
         $this->header = [
             "X-API-KEY:" . $this->public_key,
             "X-PRIVATE-KEY: " . $this->private_key,
@@ -94,21 +87,19 @@ class PayCfa
             "X-MARCHAND-KEY: " . $this->marchand_id,
             'Content-Type: Application/json'
         ];
-
         $this->keys = [
             'public' => $this->public_key,
             'private' => $this->private_key,
             'secret' => $this->secret
         ];
-
-
     }
-
+    
+    /**
+     * @return JSON
+     */
     public function getTransactionStatus($transactionId)
     {
-
         $reponse = null;
-
         if (
             !isset($transactionId) ||
             !isset($this->private_key) ||
@@ -116,50 +107,37 @@ class PayCfa
             !isset($this->secret)
         )
         {
-            $response = json_encode(array(
+            return json_encode(array(
                 "error" => true,
-                "message"=>"Rassurez vous de passer les arguments
+                "message"=>"Assurez-vous d'avoir passer les arguments recommandés.
                 suivants : 'transactionId','public_key',
-                'private_key','secret'"));;
-            return $response;
+                'private_key','secret'"));
         }
-
-
         try {
-
             $curl = curl_init();
-
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $this->const . $this->verify_URL."".$transactionId,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_PORT => 4200,
+                CURLOPT_PORT => 4002,
                 CURLOPT_HTTPHEADER => $this->header
             ));
-
             $response = curl_exec($curl);
             $err = curl_error($curl);
-
             curl_close($curl);
-
-
             if ($err) {
-                $response = json_encode(array("error" => true,"message"=>$err));;
+                $response = array("error" => true,"message"=>$err);
             }
-
         } catch (\Exception $e) {
-            $response = json_encode(array("error" => true));
+            $response = array("error" => true);
         }
-        return $response;
-
+        return json_encode($response);
     }
 
 
     public function setRequestPayment()
     {
         $reponse = null;
-
-
         if (
             !isset($this->currency) ||
             !isset($this->items) ||
@@ -173,13 +151,10 @@ class PayCfa
         {
             $response = json_encode(array(
                 "error" => true,
-                "message"=>"Rassurez vous de passer les arguments suivants : 'currency','items','amount','nameStore', 'template','public_key', 'private_key','secret'"));;
+                "message"=>"Assurez-vous de passer les arguments suivants : 'currency','items','amount','nameStore', 'template','public_key', 'private_key','secret'"));;
             return $response;
         }
-
-
         try {
-
             $invoice = null;
             $actions = null;
             $store = null;
@@ -197,7 +172,6 @@ class PayCfa
                 "return_url" => $this->getReturnUrl(),
                 "callback_url" => $this->getRedirectionUrl()
             ];
-
             $store = [
                 "name" => $this->getNameStore(),
                 "postal_adress" => $this->getPostalAdressStore(),
@@ -206,10 +180,7 @@ class PayCfa
                 "phone" => $this->getPhoneStore(),
                 "template" => $this->getTemplate()
             ];
-
-
             $curl = curl_init();
-
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $this->const . $this->setPayout_URL,
                 CURLOPT_RETURNTRANSFER => true,
@@ -217,16 +188,12 @@ class PayCfa
                 CURLOPT_POSTFIELDS => json_encode(["invoice" => $invoice,"store"=>$store,"actions"=>$actions]),
                 CURLOPT_HTTPHEADER => $this->header
             ));
-
             $response = curl_exec($curl);
             $err = curl_error($curl);
-
             curl_close($curl);
-
             if ($err) {
                 $response = json_encode(array("error" => true,"message"=>$err));;
             }
-
         } catch (\Exception $e) {
             $response = json_encode(array("error" => true));
         }
@@ -249,10 +216,6 @@ class PayCfa
     {
         $this->currency = $currency;
     }
-
-
-
-
 
     /**
      * @return null
