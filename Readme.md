@@ -2,7 +2,7 @@
 
 
 
-The [PHP](https://www.php.net) library for [INTRAM (intram.com)](https://intram.com).
+The [PHP](https://www.php.net) library for [INTRAM (intram.org)](https://intram.org).
 
 Built on the INTRAM HTTP API (beta).
 
@@ -17,7 +17,7 @@ composer require intram/php-sdk
 Setup intram API keys.
 
 ```php
-$paycfa = new \intram\PayCfa\PayCfa(
+$intram = new \intram\Intram\(
             "5b06f06a0aad7d0163c414926b635ee9cdf41438de0f09d70a4acf153083b7ed375a691e3513b42544530469e1ff8657b34508dc61927048444dd6dc9ccbb87f",
             "pk_9c0410014969f276e8b3685fec7b1b2ab41fc760db2976c75e32ec0fdc3b7d5575a7087f9aeb4d8a29a949ac4cac11363b39ff6a6d9dc3bc6ce0f328c62c3c58",
             "sk_08bd75f9468b484d8a9f24daddff4638d6513fdcf3ff4dd533e72ce55c22eac3207c12af49400ecddb1969ad3db152b0c338c0050c4540f9d0cb8c3cd3cb8c26",
@@ -36,7 +36,7 @@ The mode: `true` for live mode and `false` for test mode.
 ###### Setting Store name
 (required)
 ```php
-$paycfa->setNameStore("Suntech Store"); 
+$intram->setNameStore("Suntech Store"); 
 ```
 
 
@@ -44,7 +44,7 @@ $paycfa->setNameStore("Suntech Store");
 ###### Setting Store Logo Url
 
 ```php
-$paycfa->setLogoUrlStore("https://www.suntechshop/logo.png");
+$intram->setLogoUrlStore("https://www.suntechshop/logo.png");
 ```
 
 
@@ -52,7 +52,7 @@ $paycfa->setLogoUrlStore("https://www.suntechshop/logo.png");
 ###### Setting Store Web site
 
 ```php
-$paycfa->setWebSiteUrlStore("https://www.suntechshop");
+$intram->setWebSiteUrlStore("https://www.suntechshop");
 ```
 
 
@@ -60,7 +60,7 @@ $paycfa->setWebSiteUrlStore("https://www.suntechshop");
 ###### Setting Store phone
 
 ```php
-$paycfa->setPhoneStore("97000000");
+$intram->setPhoneStore("97000000");
 ```
 
 
@@ -68,7 +68,7 @@ $paycfa->setPhoneStore("97000000");
 ###### Setting Store Postal adress
 
 ```php
-$paycfa->setPostalAdressStore("BP 35");
+$intram->setPostalAdressStore("BP 35");
 ```
 
 ##Create a request paiement
@@ -78,7 +78,7 @@ For that :
 ###### Add Invoice Items
 Add the different products of the purchase (required)
 ```php
-$paycfa->setItems([
+$intram->setItems([
             ['name'=>"T-shirt",'qte'=>"2",'price'=>"500",'totalamount'=>"1000"],
             ['name'=>"trouser",'qte'=>"1",'price'=>"12500",'totalamount'=>"12500"],
         ]);
@@ -87,14 +87,14 @@ $paycfa->setItems([
 ###### Setting TVA Amount
 TVA (optional)
 ```php
-payfa->setTva([["name" => "VAT (18%)", "amount" => 1000],["name" => " other VAT", "amount" => 500]]);
+$intram->setTva([["name" => "VAT (18%)", "amount" => 1000],["name" => " other VAT", "amount" => 500]]);
 ```
 
 
 ###### Adding Custom Data
 (optional)
 ```php
-$paycfa->setCustomData([['CartID',"32393"],['PERIOD',"TABASKI"]]);
+$intram->setCustomData([['CartID',"32393"],['PERIOD',"TABASKI"]]);
 ```
 
 
@@ -102,53 +102,53 @@ $paycfa->setCustomData([['CartID',"32393"],['PERIOD',"TABASKI"]]);
 ###### Setting Total Amount 
 Order total (required)
 ```php
-$paycfa->setAmount(13600);
+$intram->setAmount(13600);
 ```
 ###### Setting Currency 
 Currency of paiement (required)
 ```php
-$paycfa->setCurrency("XOF");
+$intram->setCurrency("XOF");
 ```
 
 ###### Setting Description 
 Description of operation (required)
 ```php
-$paycfa->setDescription("Pretty and suitable for your waterfall");
+$intram->setDescription("Pretty and suitable for your waterfall");
 ```
 
 
 ###### Setting Template 
  (required)
 ```php
-$paycfa->setTemplate("default");
+$intram->setTemplate("default");
 ```
 
 
 ###### Setting Store Redirection Url
 
 ```php
-$paycfa->setRedirectionUrl("https://www.suntechshop/redirection-url");
+$intram->setRedirectionUrl("https://www.suntechshop/redirection-url");
 ```
 
 
 ###### Setting Store Return Url
 
 ```php
-$paycfa->setReturnUrl("https://www.suntechshop/return-url");
+$intram->setReturnUrl("https://www.suntechshop/return-url");
 ```
 
 
 ###### Setting Store Cancel Url
 
 ```php
-$paycfa->setCancelUrl("https://www.suntechshop/cancel-url");
+$intram->setCancelUrl("https://www.suntechshop/cancel-url");
 ```
 
 
 ###### Make the payment request
 
 ```php
-$response = json_decode($paycfa->setRequestPayment());
+$response = json_decode($intram->setRequestPayment());
 ```
 ###### Expected response
 
@@ -177,7 +177,7 @@ $error = $response->error;
 
 Give the transaction identifier as an argument to the function (required)
 ```php
-$paycfa->getTransactionStatus(5f2d7a96b97d9d3fea912c11); 
+$intram->getTransactionStatus(5f2d7a96b97d9d3fea912c11); 
 ```
 
 ###### Expected response
@@ -192,28 +192,6 @@ $paycfa->getTransactionStatus(5f2d7a96b97d9d3fea912c11);
     +"_created_at": "2020-09-15T14:56:10.316Z"
     +"_id": "5f60d7a0573bc71854bf095e"
     +"_type": "DEBIT"
-    +"marchand": {
-      +"_statut": true
-      +"_state_id": "5f31a47a38111e135ae7b7f3"
-      +"_valide": true
-      +"_settingtransaction": array:2 [▼
-        0 => "5f2fbca2c5e9d61f980574ff"
-        1 => "5f31aab338111e135ae7b7fb"
-      ]
-      +"_env": "sandbox"
-      +"_created_at": "2020-07-23T10:01:42.667Z"
-      +"_id": "5f19604cd7e0114103d4ced3"
-      +"_user_id": "5f195d842860e81da7d82f3a"
-      +"__v": 0
-      +"_base_url_site_web": "www.afarath.com"
-      +"_company": "AraTech"
-      +"_email": "fath@aratech.com"
-      +"_web_site": "www.afarath.com"
-      +"_template": array:2 [
-        0 => "5f3577573ac8c46963470639"
-        1 => "5f35773e3ac8c46963470637"
-      ]
-    }
     +"_store": {
       +"name": "Sodjinnin Store"
       +"postal_adress": "BP 35"
