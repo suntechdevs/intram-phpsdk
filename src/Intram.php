@@ -7,7 +7,7 @@
  */
 
 
-namespace intram\PayCfa;
+namespace Intram\Intram;
 
 class Intram
 {
