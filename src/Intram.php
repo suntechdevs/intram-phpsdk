@@ -7,7 +7,7 @@
  */
 
 
-namespace Intram\Intram;
+namespace Intram;
 
 class Intram
 {
