@@ -108,10 +108,7 @@ class Intram
         )
         {
             return json_encode(array(
-                "error" => true,
-                "message"=>"Assurez-vous d'avoir passer les arguments recommandés.
-                suivants : 'transactionId','public_key',
-                'private_key','secret'"));
+                "status" => 'INVALID_TRANSACTION'));
         }
         try {
             $curl = curl_init();
@@ -126,12 +123,12 @@ class Intram
             $err = curl_error($curl);
             curl_close($curl);
             if ($err) {
-                $response = array("error" => true,"message"=>$err);
+                $response = json_encode(array("status" => 'TRANSACTION_NOT_FOUND',"message"=>$err));
             }
         } catch (\Exception $e) {
-            $response = array("error" => true);
+            $response = json_encode(array("status" => 'INVALID_TRANSACTION_TYPE'));
         }
-        return json_encode($response);
+        return json_decode($response);
     }
 
 
@@ -150,8 +147,7 @@ class Intram
         )
         {
             $response = json_encode(array(
-                "error" => true,
-                "message"=>"Assurez-vous de passer les arguments suivants : 'currency','items','amount','nameStore', 'template','public_key', 'private_key','secret'"));;
+                "status" => 'INVALID_TRANSACTION'));;
             return $response;
         }
         try {
@@ -192,12 +188,12 @@ class Intram
             $err = curl_error($curl);
             curl_close($curl);
             if ($err) {
-                $response = json_encode(array("error" => true,"message"=>$err));;
+                $response = json_encode(array("status" => 'TRANSACTION_NOT_FOUND'));;
             }
         } catch (\Exception $e) {
-            $response = json_encode(array("error" => true));
+            $response = json_encode(array("status" => 'INVALID_TRANSACTION_TYPE'));
         }
-        return $response;
+        return json_decode($response);
     }
 
 
