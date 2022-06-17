@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: sodjinnin
+ * User: sodjinnin && BAH SOUMANY
  * Date: 21/07/20
  * Time: 13:47
  */
@@ -108,7 +108,8 @@ class Intram
         )
         {
             return json_encode(array(
-                "status" => 'INVALID_TRANSACTION'));
+                "status" => 'ERROR: KEY MISSING')
+            );
         }
         try {
             $curl = curl_init();
@@ -123,12 +124,12 @@ class Intram
             $err = curl_error($curl);
             curl_close($curl);
             if ($err) {
-                $response = json_encode(array("status" => 'TRANSACTION_NOT_FOUND',"message"=>$err));
+                $response = json_encode(array("status" => 'ERROR INITIALIZE TRANSACTION CONFIRMATION'));
             }
         } catch (\Exception $e) {
-            $response = json_encode(array("status" => 'INVALID_TRANSACTION_TYPE'));
+            $response = json_encode(array("status" => 'ERROR INITIALIZE TRANSACTION CONFIRMATION'));
         }
-        return json_decode($response);
+        return json_decode((string)$response);
     }
 
 
@@ -146,8 +147,7 @@ class Intram
             !isset($this->secret)
         )
         {
-            $response = json_encode(array(
-                "status" => 'INVALID_TRANSACTION'));;
+            $response = json_encode(array( "status" => 'ERROR: KEY MISSING'));
             return $response;
         }
         try {
@@ -188,12 +188,12 @@ class Intram
             $err = curl_error($curl);
             curl_close($curl);
             if ($err) {
-                $response = json_encode(array("status" => 'TRANSACTION_NOT_FOUND'));;
+                $response = json_encode(array("status" => 'ERROR INITIALIZE TRANSACTION CONFIRMATION'));
             }
         } catch (\Exception $e) {
-            $response = json_encode(array("status" => 'INVALID_TRANSACTION_TYPE'));
+            $response = json_encode(array("status" => 'ERROR INITIALIZE TRANSACTION CONFIRMATION'));
         }
-        return json_decode($response);
+        return json_decode((string)$response);
     }
 
 
