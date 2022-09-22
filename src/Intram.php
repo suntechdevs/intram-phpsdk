@@ -118,6 +118,7 @@ class Intram
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_PORT => 4002,
+                CURLOPT_SSL_VERIFYPEER=>0,
                 CURLOPT_HTTPHEADER => $this->header
             ));
             $response = curl_exec($curl);
@@ -181,6 +182,7 @@ class Intram
                 CURLOPT_URL => $this->const . $this->setPayout_URL,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_SSL_VERIFYPEER=>0,
                 CURLOPT_POSTFIELDS => json_encode(["invoice" => $invoice,"store"=>$store,"actions"=>$actions]),
                 CURLOPT_HTTPHEADER => $this->header
             ));
